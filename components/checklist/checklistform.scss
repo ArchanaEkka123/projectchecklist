@@ -1,0 +1,10 @@
+.checklist-main{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+border-radius: 10px;
+    .checklist-heading {
+        padding: 5px;
+        border-radius: 5px 5px 0 0;
+    }
+}

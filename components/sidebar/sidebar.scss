@@ -1,0 +1,31 @@
+.Sidebar-main{
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+ 
+
+.SearchBox-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.SearchBox{
+    background-color: rgb(247, 244, 244);
+    font-size: small;
+    width: 220px;
+    height: 30px;
+    padding-left: 10px;
+    font: bold;
+}
+.menu {
+height: 30px;
+padding-left: 10px;
+font-size: 12px;
+}
+
+.sidemenu{
+   height: 40px; 
+    padding-left: 10px;
+}
+}
