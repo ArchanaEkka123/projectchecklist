@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import "./checklistform.scss";
 import * as XLSX from "xlsx";
 export default function Checklist() {
+
   const [formData, setFormData] = useState({
     mmuName: "Raipur MMU01,Raipur MMU01",
     inspectionDate: "",
@@ -14,7 +15,11 @@ export default function Checklist() {
     doctorName: "",
     nodalOfficer: "",
     location: "",
-  });
+    equipment: [],
+  }
+
+  );
+
 
   const mmuList = [
     "Raipur MMU01",
@@ -26,6 +31,8 @@ export default function Checklist() {
     "Durg MMU02",
     "Bilaspur MMU01",
   ];
+
+
   const initialEquipment = [
     {
       instrumentName: "12 Lead ECG Machine",
@@ -448,4 +455,5 @@ export default function Checklist() {
       </div>
     </div>
   );
+  
 }
