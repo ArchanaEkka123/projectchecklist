@@ -1,7 +1,7 @@
 "use client";
-
+import StatsBarChart from "@/components/chart/StatsBarChart";
 import { useEffect, useState } from "react";
-import MonthlyChart from "@/components/chart/monthlychart";
+//import MonthlyChart from "@/components/chart/monthlychart";
 import "./dashboard.scss";
 
 export default function Dashboard() {
@@ -73,7 +73,7 @@ export default function Dashboard() {
         </div>
 
       </div>
- <MonthlyChart />
+ <StatsBarChart stats={stats} />
     </div>
   );
 }

@@ -7,16 +7,18 @@ gap: 10px;
 
 .SearchBox-main{
     display: flex;
-    justify-content: center;
+   justify-content:space-evenly;
     align-items: center;
+   margin-left: 5px;
 }
 .SearchBox{
-    background-color: rgb(247, 244, 244);
-    font-size: small;
-    width: 220px;
-    height: 30px;
-    padding-left: 10px;
-    font: bold;
+//     background-color: rgb(247, 244, 244);
+ background-color: azure;
+ font-size: small;
+    width: 250px;
+ height: 30px;
+padding-left: 10px;
+ font: bold;
 }
 .menu {
 height: 30px;

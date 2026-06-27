@@ -1,37 +1,61 @@
 "use client";
-
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import "./sidebar.scss";
 import Link from "next/link";
-//import Dashboard from "@/components/dashboard/dashboard";
-//import ChecklistPage from "../checklist/checklistform";
+import Dashboard from "@/components/dashboard/dashboard";
+import ChecklistPage from "../checklist/checklistform";
 import Navbar from "@/components/navbar/Navbar";
 import {
   LayoutDashboard,
   UserPlus,
   ChevronRight,
+   Search,
 } from "lucide-react";
 
 export default function Sidebar() {
+ const router = useRouter();
+  const [search, setSearch] = useState("");
+
+  const handleSearch = () => {
+    const value = search.trim().toLowerCase();
+
+    if (value === "dashboard") {
+      router.push("/dashboard");
+    } else if (value === "checklist") {
+      router.push("/checklist");
+    } else if (value === "report") {
+      router.push("/report");
+    } else {
+      alert("Page not found");
+    }
+  }
+
   return (
     <div className="Sidebar-main w-[230px] min-h-screen bg-[#f15a18] text-white">
-      
-      {/* Logo */}
-      {/* <div className="flex justify-center py-4 bg-[#f15a18]">
-        <img
-          src="/images/Ekka-Logo.jpg"
-          alt="logo"
-          className="w-[90px] h-[90px] object-contain"
-        />
-      </div> */}
-
+            
       {/* Search */}
-      <div className="SearchBox-main">
-        <input
-          type="text"
-          placeholder="Search..."
-          className="SearchBox px-6 py-2 rounded w-50 text-black"
-        />
-      </div>
+      <div className="SearchBox-main flex items-center gap-2 pl-10">
+  <input
+    type="text"
+    placeholder="Search..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {  
+        handleSearch();
+      }
+    }}
+    className="SearchBox  rounded w-full text-black"
+  />
+
+  <button
+    onClick={handleSearch}
+    className="bg-white p-2 rounded text-orange-600 hover:bg-gray-200"
+  >
+    {/* <Search size={18} /> */}
+  </button>
+</div>
 
       {/* Menu Heading */}
       <div className="menu uppercase border-b border-orange-300">
